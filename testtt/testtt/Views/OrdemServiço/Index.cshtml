@@ -1,0 +1,53 @@
+﻿@model IEnumerable<testtt.Repository.Models.OrdemServiço>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dataservico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeCombustivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servicodesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotoristaCpfNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dataservico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeCombustivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servicodesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotoristaCpfNavigation.Cpf)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrdemId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrdemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrdemId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

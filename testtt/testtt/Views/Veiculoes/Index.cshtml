@@ -1,0 +1,41 @@
+﻿@model IEnumerable<testtt.Repository.Models.Veiculo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCombustivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeVeiculo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCombustivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeVeiculo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PlacaVeiculo">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PlacaVeiculo">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PlacaVeiculo">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

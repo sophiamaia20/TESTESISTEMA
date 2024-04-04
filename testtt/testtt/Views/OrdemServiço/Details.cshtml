@@ -1,0 +1,42 @@
+﻿@model testtt.Repository.Models.OrdemServiço
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>OrdemServiço</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dataservico)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dataservico)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QuantidadeCombustivel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QuantidadeCombustivel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Servicodesc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Servicodesc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MotoristaCpfNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MotoristaCpfNavigation.Cpf)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OrdemId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
